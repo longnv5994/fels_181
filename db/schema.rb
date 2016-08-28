@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20160829020124) do
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "target_id"
-    t.text     "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "action_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160829020124) do
     t.string   "name"
     t.integer  "user_id"
     t.integer  "category_id"
-    t.boolean  "is_success",  default: false
+    t.boolean  "is_complete", default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
