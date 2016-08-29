@@ -29,7 +29,7 @@ en:
     home: "Home"
     help: "Help"
     signup: "Sign Up"
-  help: 
+  help:
     content: "Contacht to"
     or: "or"
   login: "Login"
@@ -37,5 +37,5 @@ en:
   remember: "Remember me on this computer"
   title_head: "| E-Learning"
   new_user: "New user?"
-    
-    
+  signup: "Signup"
+  create_account: "Create my account"
