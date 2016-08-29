@@ -20,4 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  footer:
+    content: "The E-Learing System Create by"
+    and: "and"
+  header:
+    title: "E-Learning System"
+    home: "Home"
+    help: "Help"
+    signup: "Sign Up"
+  help: 
+    content: "Contacht to"
+    or: "or"
+  login: "Login"
+  transit: "Sign up now!"
+  remember: "Remember me on this computer"
+  title_head: "| E-Learning"
+  new_user: "New user?"
+    
+    
