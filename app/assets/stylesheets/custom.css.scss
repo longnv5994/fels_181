@@ -45,14 +45,13 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: blue;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
 
 /* header */
 
@@ -127,4 +126,14 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* forms */
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 9px 0;
+  }
 }
