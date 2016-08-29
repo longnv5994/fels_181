@@ -4,7 +4,7 @@ class CreateLessons < ActiveRecord::Migration
       t.string :name
       t.integer :user_id
       t.integer :category_id
-      t.boolean :is_success, default: false
+      t.boolean :is_complete, default: false
 
       t.timestamps null: false
     end
