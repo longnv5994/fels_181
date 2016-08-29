@@ -3,10 +3,29 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find_by id: params[:id]
+  end
+
+  def edit
+    @user = User.find_by id: params[:id]
+  end
+
+  def update
+    @user = User.find_by id: params[:id]
+    if @user.update_attributes user_params
+      flash[:success] = t "update_profile"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
   def create
     @user = User.new user_params
     if @user.save
-      redirect_to user_path
+      flash[:success] = "create"
+      redirect_to @user
     else
       render :new
     end

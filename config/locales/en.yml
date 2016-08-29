@@ -39,3 +39,8 @@ en:
   new_user: "New user?"
   signup: "Signup"
   create_account: "Create my account"
+  update_profile: "Profile updated"
+  edit: "Edit profile"
+  save_change: "Save changes"
+  create: "Account has been created! Please login!"
+  change: "Change"
