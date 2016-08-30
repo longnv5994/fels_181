@@ -19,6 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
 en:
 
   footer:
@@ -30,12 +31,22 @@ en:
     help: "Help"
     signup: "Sign Up"
   help:
-    content: "Contacht to"
+    content: "Contact to"
     or: "or"
   login: "Login"
   transit: "Sign up now!"
   remember: "Remember me on this computer"
-  title_head: "| E-Learning"
+  title_head: " | E-Learning"
   new_user: "New user?"
   signup: "Signup"
   create_account: "Create my account"
+  update_profile: "Profile updated"
+  edit: "Edit profile"
+  save_change: "Save changes"
+  create: "Account has been created! Please login!"
+  change: "Change avatar"
+  edit_profile: "Edit profile"
+  miss_user: "Can not found user"
+  all_user: "All user"
+  sure: "Are you sure?"
+  delete: "Delete"

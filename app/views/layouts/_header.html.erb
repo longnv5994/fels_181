@@ -1,11 +1,11 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top header_bar">
   <div class="container">
-    <%= link_to t("header.title"), "#", id: "logo" %>
+    <%= link_to t("header.title"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("header.home"), root_path %></li>
-        <li><%= link_to t("header.help"), static_pages_help_path%></li>
-        <li><%= link_to t("header.signup"), "#" %></li>
+        <li><%= link_to t("header.home"), root_path, id: "header_botton" %></li>
+        <li><%= link_to t("header.help"), help_path, id: "header_botton" %></li>
+        <li><%= link_to t("header.signup"), signup_path, id: "header_botton" %></li>
       </ul>
     </nav>
   </div>
