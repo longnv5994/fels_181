@@ -1,0 +1,14 @@
+<% provide :title, t("edit") %>
+<% provide :button_text, t("save_change") %>
+<h1><%= t "edit" %></h1>
+<div class="row page_resize">
+  <div class="gravatar_edit col-md-5">
+    <p><%= gravatar_for @user %></p>
+    <p><a href="http://gravatar.com/emails" class="btn btn-primary" >
+      <%= t "change" %></a></p>
+  </div>
+
+  <div class="col-md-7">
+    <%= render "form" %>
+  </div>
+</div>
