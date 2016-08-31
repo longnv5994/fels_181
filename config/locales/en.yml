@@ -58,3 +58,11 @@ en:
   delete: " | delete"
   user_delete: "User deleted"
   Please_log_in: "Please_log_in"
+  word:
+    create: "Word created"
+    update: "Word updated"
+    miss: "Can not find word!"
+  word_answer:
+    create: "Word answer created"
+    update: "Word asnwer updated"
+    miss: "Can not find word answer!"
