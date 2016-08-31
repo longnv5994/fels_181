@@ -15,3 +15,38 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  var word_attribute_index = 0;
+    $('#btn').click(function(){
+      $('ol').append(
+        "<div class='tr-ans-"+word_attribute_index+" tr-ans'>"
+        + "<div class='col-md-7'>"
+        + "<label for='word_word_answers_attributes_"
+        + word_attribute_index
+        + "_word_answer'></label>"
+        + "<input type='text' name='word[word_answers_attributes]["
+        + word_attribute_index
+        + "][content]' id='word_word_answers_attributes_"
+        + word_attribute_index
+        + "_content'>"
+        + "</div>"
+        + "<div class='checkbox col-md-2'>"
+        + "<label><input value='true' type='radio' name='word[word_answers_attributes][0][is_correct]' >correct</label>"
+        + "</div>"
+        + "<div class='deletebox col-md-2'>"
+        + "<label><a href='javascript:;' class='btn-delete-ans' data-id='"
+        + word_attribute_index
+        + "' type='button'>delete</a></label>"
+        + "</div>"
+        + "</div>"
+      );
+    word_attribute_index++;
+  });
+
+  $('.grid-answer').on('click','.btn-delete-ans',function(event){
+    var id = $(this).data("id");
+    $(".tr-ans-"+id).remove();
+    event.preventDefault();
+  })
+});

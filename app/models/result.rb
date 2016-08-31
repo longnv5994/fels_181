@@ -1,5 +1,5 @@
 class Result < ActiveRecord::Base
-  belong_to :lesson
-  belong_to :word
-  belong_to :word_answer
+  belongs_to :lesson
+  belongs_to :word
+  belongs_to :word_answer
 end

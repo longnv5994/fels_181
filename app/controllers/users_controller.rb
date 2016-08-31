@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :admin_user, only: :destroy
+  before_action :verify_admin, only: :destroy
 
   def new
     @user = User.new
@@ -53,9 +53,5 @@ class UsersController < ApplicationController
         flash[:danger] = t "miss_user"
         redirect_to root_url
       end
-    end
-
-    def admin_user
-      redirect_to root_url unless current_user.is_admin?
     end
 end
