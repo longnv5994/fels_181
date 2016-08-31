@@ -67,9 +67,23 @@ p {
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: white;
+    color: black;
     text-decoration: none;
   }
+}
+
+.header_botton a{
+  color: white;
+  font: Sans-serif;
+  font-weight: bord;
+  &:hover {
+    color: black;
+    background: none;
+  }
+}
+
+.header_bar{
+  background-color: #337ab7;
 }
 
 /* footer */
@@ -118,6 +132,7 @@ input {
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
+  position: relative;
   span {
     margin-left: 20px;
     font-weight: normal;
@@ -158,8 +173,12 @@ input {
 
 .user_info {
     margin-top: 20px;
+    p {
+      font-size: 18px;
+    }
 }
 
 .botton {
   margin-top: 20px;
+  color: green;
 }
