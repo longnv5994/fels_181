@@ -1,11 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-
 $gray-medium-light: #eaeaea;
-
-/* universal */
 
 body {
   padding-top: 60px;
@@ -25,8 +21,6 @@ textarea {
     margin-bottom: 10px;
   }
 }
-
-/* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -54,8 +48,6 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
-/* header */
 
 #logo {
   float: left;
@@ -86,8 +78,6 @@ p {
   background-color: #337ab7;
 }
 
-/* footer */
-
 footer {
   margin-top: 45px;
   padding-top: 100px;
@@ -116,7 +106,6 @@ footer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* forms */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -143,8 +132,6 @@ input {
   width: auto;
   margin-left: 0;
 }
-
-/* forms */
 
 #error_explanation {
   color: red;
@@ -181,4 +168,35 @@ input {
 .botton {
   margin-top: 20px;
   color: green;
+}
+
+.categories {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
 }

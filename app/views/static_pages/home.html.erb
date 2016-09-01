@@ -1,5 +1,10 @@
 <% if logged_in? %>
-  <div></div>
+  <% provide :title, t("header.home")  %>
+  <div class="row">
+  <%= link_to t("add_category"),  categories_path %>
+    <br></br>
+  <%= link_to "Show category", show_path %>
+  </div>
 <% else %>
   <% provide :title, t("login") %>
   <h1><%= t "login" %></h1>

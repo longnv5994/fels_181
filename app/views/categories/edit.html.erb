@@ -1,0 +1,8 @@
+<% provide :title, t("category.edit_title") %>
+<%= form_for @category do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.text_area :name %>
+  </div>
+  <%= f.submit t("category.btn_update"), class: "btn btn-primary" %>
+<% end %>

@@ -1,4 +1,4 @@
-class UsersControllr < ApplicationController
+class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   before_action :admin_user, only: :destroy
 

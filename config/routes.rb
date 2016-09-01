@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get "/help", to: "static_pages#help"
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
+  get "/show", to: "categories#show"
   resources :users
+  resources :categories, except: [:new]
 end
