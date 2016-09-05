@@ -49,6 +49,20 @@ p {
   line-height: 1.7em;
 }
 
+.btn-submit-form {
+  margin-top: 5px
+}
+
+table tr td {
+  vertical-align: middle !important;
+}
+table .underline {
+  text-decoration: underline;
+}
+table th {
+  text-align: center
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -79,8 +93,8 @@ p {
 }
 
 footer {
-  position: fixed;
-  bottom: 15px;
+  overflow: hidden;
+  clear: both;
   color: $gray-light;
   a {
     color: $gray;
@@ -203,4 +217,13 @@ input {
 
 #myform {
   display: none;
+}
+.fix-paging {
+  text-align: center;
+  div.pagination {
+    margin:10px 0;
+  }
+  ul.pagination {
+    margin:0;
+  }
 }

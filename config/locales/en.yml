@@ -62,7 +62,12 @@ en:
   add_category: "Add Category"
   add_success: "Add category success!"
   update_success: "Update category success!"
+  created: Created
+  title: Title
+  function: Function
+  ord: Ord
   category:
+    categories: "Category"
     btn_update: "Update Category"
     btn_add: "Add Category"
     edit_title: "Edit Category"
@@ -73,18 +78,29 @@ en:
     delete: "Delete"
     detail: ".....Detail"
     blank: "Can't found category!"
+    search: "Search category"
   word:
+    all_word: "All words"
+    all_word_answer: "Words and Answers"
     create: "Word created"
     create_button: "Create word"
+    save_button: "Save changes"
     update: "Word updated"
     miss: "Can not find word!"
     add: "Add word and answer"
     save: "Save changes"
     not_create: "Can not create word"
     not_update: "Can not update word"
+    edit: "Edit word & answer"
+    word_delete: "Word deleted"
+    blank: "Can't found word!"
   word_answer:
     create: "Word answer created"
     update: "Word asnwer updated"
     miss: "Can not find word answer!"
     new_answer: "New answer"
     answers: "Word answers"
+  time:
+    formats:
+      short_datetime: "%B %d, %Y"
+      long_datetime:  "%B %d, %Y, at %r"
