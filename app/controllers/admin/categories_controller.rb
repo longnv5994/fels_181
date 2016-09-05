@@ -1,9 +1,10 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
   before_action :logged_in?, only: [:create, :destroy]
-  before_action :load_category, only: [:edit, :update, :destroy]
+  before_action :load_category, only: [:edit, :update, :destroy, :show]
 
   def index
-    @categories = Category.all
+    @categories = Category.paginate page: params[:page],
+      per_page: Settings.per_page
     @category = Category.new
   end
 
@@ -14,7 +15,7 @@ class CategoriesController < ApplicationController
     if @category.update_attributes category_params
       flash[:success] = t "update_success"
     end
-      redirect_to categories_path
+      redirect_to admin_categories_path
   end
 
   def create
@@ -31,8 +32,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @categories = Category.all
-    @category = Category.new
   end
 
   private

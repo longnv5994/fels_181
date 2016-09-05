@@ -62,7 +62,12 @@ en:
   add_category: "Add Category"
   add_success: "Add category success!"
   update_success: "Update category success!"
+  created: Created
+  title: Title
+  function: Function
+  ord: Ord
   category:
+    categories: "Category"
     btn_update: "Update Category"
     btn_add: "Add Category"
     edit_title: "Edit Category"
@@ -88,3 +93,7 @@ en:
     miss: "Can not find word answer!"
     new_answer: "New answer"
     answers: "Word answers"
+  time:
+    formats:
+      short_datetime: "%B %d, %Y"
+      long_datetime:  "%B %d, %Y, at %r"
