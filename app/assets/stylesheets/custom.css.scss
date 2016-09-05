@@ -79,8 +79,8 @@ p {
 }
 
 footer {
-  margin-top: 45px;
-  padding-top: 100px;
+  position: fixed;
+  bottom: 15px;
   color: $gray-light;
   a {
     color: $gray;
@@ -199,4 +199,8 @@ input {
     margin-right: 10px;
     margin-top: 5px;
   }
+}
+
+#myform {
+  display: none;
 }

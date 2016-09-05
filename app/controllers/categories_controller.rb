@@ -11,11 +11,11 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update_attributes category_params  
+    if @category.update_attributes category_params
       flash[:success] = t "update_success"
     end
       redirect_to categories_path
-  end  
+  end
 
   def create
     @category = Category.new category_params
@@ -32,12 +32,12 @@ class CategoriesController < ApplicationController
 
   def show
     @categories = Category.all
-    @category = Category.new  
+    @category = Category.new
   end
 
   private
   def category_params
-    params.require :category.permit(:name)
+    params.require(:category).permit :name
   end
 
   def load_category

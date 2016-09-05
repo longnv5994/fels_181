@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4">
+    <section class="user_info">
+      <h2>
+        <p>
+          <%= gravatar_for user, size: Settings.avatar.size %>
+          <%= link_to user.name, user %>
+          <% if logged_in? and current_user.is_admin? and !current_user?(user) %>
+            <%= link_to t("delete"), user, method: :delete,
+              data: {confirm: t("sure")} %>
+          <% end %>
+        </p>
+      </h2>
+    </section>
+  </div>
+</div>
