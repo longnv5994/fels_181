@@ -93,8 +93,8 @@ table th {
 }
 
 footer {
-  position: fixed;
-  bottom: 15px;
+  overflow: hidden;
+  clear: both;
   color: $gray-light;
   a {
     color: $gray;

@@ -8,20 +8,26 @@ class Admin::WordsController < ApplicationController
     @categories = Category.all
   end
 
-  def show
-  end
-
   def edit
+    @categories = Category.all
   end
 
   def index
+    @categories = Category.all
+    if params[:search]
+      @words = Word.filter_category(params[:search]).paginate page: params[:page],
+        per_page: Settings.per_page
+    else
+      @words = Word.order(created_at: :desc).paginate page: params[:page],
+        per_page: Settings.per_page
+    end
   end
 
   def create
     @word = Word.new word_params
     if @word.save
       flash[:info] = t "word.create"
-      redirect_to :back
+      redirect_to admin_words_url
     else
       flash[:danger] = t "word.not_create"
       render :new
@@ -31,11 +37,17 @@ class Admin::WordsController < ApplicationController
   def update
     if @word.update_attributes word_params
       flash[:success] = t "word.update"
-      redirect_to :word
+      redirect_to admin_words_url
     else
       flash[:danger] = t "word.not_update"
       render :edit
     end
+  end
+
+  def destroy
+    Word.find_by(id: params[:id]).destroy
+    flash[:success] = t "word.word_delete"
+    redirect_to admin_words_url
   end
 
   private
@@ -48,7 +60,7 @@ class Admin::WordsController < ApplicationController
       @word = Word.find_by id: params[:id]
       if @word.nil?
         flash[:danger] = t "word.miss"
-        redirect_to :word
+        redirect_to admin_words_url
       end
     end
 end

@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     resources :users
     resources :words do
       resources :word_answers, only: :index
+    end
   end
 end

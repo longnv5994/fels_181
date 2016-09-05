@@ -1,0 +1,49 @@
+<div class="portlet grid">
+  <div class="portlet-title">
+    <div class="caption">
+      <div class="col-md-6 col-md-offset-1">
+        <div class="portlet grid">
+          <div class="portlet-body">
+            <div class="grid-content">
+              <!-- BEGIN: item -->
+              <% @words.each do |word| %>
+                <div class="item">
+                  <div class="item-icon">
+                    <span class="glyphicon glyphicon-question-sign icon-question"></span>
+                  </div>
+                  <div class="item-body">
+                    <div class="item-info">
+                      <p class="mt-action-desc">
+                        <%= word.content %>
+                        <%= link_to t("word.edit"), edit_admin_word_path(word) %>
+                        <%= link_to t("word.delete"), admin_word_path(word), method: :delete %>
+                      </p>
+                    </div>
+                    <div class="item-datetime">
+                      <span class="mt-action-date"></span>
+                    </div>
+                    <div class="lst-answer">
+                      <ol>
+                        <% word.word_answers.each do |word_answers| %>
+                          <li><%= word_answers.content %></li>
+                        <% end %>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <!-- END: item -->
+            </div>
+            <div class="grid-paging">
+              <%= will_paginate %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-2">
+  <%= link_to t("word.add"), new_admin_word_path, class: "btn btn-primary button" %>
+</div>

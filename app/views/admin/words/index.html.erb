@@ -1,0 +1,13 @@
+<% provide :title, t("word.all_word") %>
+<h1><%= t "word.all_word_answer" %></h1>
+<div class="col-md-2">
+  <label><%= t "category.search" %></label>
+  <%= form_tag admin_words_path, method: :get do %>
+    <%= select_tag :search, options_from_collection_for_select(@categories,
+      "id", "name", params[:search]) %>
+    <%= submit_tag "search", id: "searchbtn", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<ul>
+  <%= render "word" %>
+</ul>
