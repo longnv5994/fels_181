@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   before_action :verify_admin, only: :destroy
 
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       flash[:success] = t "update_profile"
-      redirect_to @user
+      redirect_to [:admin, @user]
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def destroy
     User.find_by(id: params[:id]).destroy
     flash[:success] = t "user_delete"
-    redirect_to users_url
+    redirect_to admin_users_url
   end
 
   private
