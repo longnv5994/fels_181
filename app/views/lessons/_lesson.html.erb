@@ -1,14 +1,14 @@
-<tr>
+<tr class="center">
   <td><%= lesson.category.name %></td>
   <td><%= l lesson.created_at, format: :short %></td>
-  <td class="center"><%= lesson.results.size %></td>
+  <td><%= lesson.results.size %></td>
   <td>
     <%= lesson.is_complete? ? t("lesson.finished") : t("lesson.wait_contest") %>
   </td>
-  <td class="center"><%= lesson.is_complete? ? "" : "-" %></td>
-  <td class="center">
+  <td><%= lesson.is_complete? ? lesson.score : "-" %></td>
+  <td>
     <% if lesson.is_complete? %>
-      <%= link_to t("lesson.finished"),
+      <%= link_to t("lesson.finished"), lesson_path(lesson),
         class: "btn btn-success btn-sm" %>
     <% else %>
       <%= link_to t("lesson.start"), edit_lesson_path(lesson),

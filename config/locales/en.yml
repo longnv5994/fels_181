@@ -113,7 +113,10 @@ en:
   keyword: Keyword
   all: All
   lesson:
-    list_lesson: List lesson
+    title: "Lessons"
+    list_lesson: "List lesson"
+    your_answers: "Your answers"
+    your_score: "Your score:"
     create_date: "Created Date"
     category: "Category"
     status: "Status"
@@ -121,9 +124,20 @@ en:
     result: "Result"
     subject: "Subject"
     start: "Start"
-    finished: "finished"
-    num_question: "Total question"
-    wait_contest: "wait contest"
+    finished: "Finished"
+    num_question: "Total question:"
+    wait_contest: "Wait contest"
+    correct_user_lesson: "You don't have permisson"
+    save_btn: "Save"
+    submit_btn: "Submit"
+    sure: "Are you sure?"
+    save_success: "Lesson saved!"
+    no_lesson_found: "Can not found lesson!"
+    verify_completed_lesson: "Lesson completed"
+    verify_uncompleted_lesson: "Lesson uncompleted"
+    already_submit: "Lesson already submit"
+    correct_answer: "Correct"
+    incorrect_answer: "Incorrect"
     create:
       success: "Create success"
       create_fail: "Create fail"
