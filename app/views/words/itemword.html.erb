@@ -1,0 +1,24 @@
+<% @words.each do |word| %>
+  <div class="item">
+    <div class="item-icon">
+      <span class="glyphicon glyphicon-question-sign icon-question"></span>
+    </div>
+    <div class="item-body">
+      <div class="item-info">
+        <p class="mt-action-desc"><%= word.content %></p>
+      </div>
+      <div class="item-datetime">
+        <span class="mt-action-date"></span>
+      </div>
+      <div class="lst-answer">
+        <ol>
+          <% word.word_answers.each do |word_answers| %>
+            <li><%= word_answers.content %></li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= will_paginate %>

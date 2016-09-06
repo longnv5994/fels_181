@@ -53,6 +53,10 @@ p {
   margin-top: 5px
 }
 
+.btn100per{
+  width: 100%;
+}
+
 table tr td {
   vertical-align: middle !important;
 }
@@ -226,4 +230,87 @@ input {
   ul.pagination {
     margin:0;
   }
+}
+
+/* Begin portlet gird system */
+.portlet.grid .portlet-title {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  overflow: hidden;
+}
+.portlet.grid .portlet-title .caption {
+  display: block;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 10px 0;
+  color: #666;
+  padding: 10px 0;
+  clear: both;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body {
+  padding-top: 5px;
+}
+.portlet.grid .portlet-body .item {
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #e7ecf1;
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body .item:nth-child(odd){
+    background-color: #f9f9f9;
+}
+.portlet.grid .portlet-body .item .item-img {
+  width: 40px;
+  float: left;
+}
+.portlet.grid .portlet-body .item .item-img img {
+  border-radius: 50%;
+}
+.portlet.grid .portlet-body .item .item-body {
+  padding-left: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body .item .item-body .item-info {
+  display: inline-block;
+}
+.portlet.grid .portlet-body .item .item-body .item-info p {
+  color: #060606;
+  font-weight: 600;
+  margin: 10px 0 0 0
+}
+.portlet.grid .portlet-body .item .item-body .item-datetime {
+  white-space: nowrap;
+  color: #A6A8A8;
+  text-align: center;
+  width: 150px;
+  display: inline-block;
+}
+.portlet.grid .portlet-body .item .item-body .item-buttons {
+  text-align: center;
+  width: 160px;
+  white-space: nowrap;
+  display: inline-block;
+  display: inline-block;
+}
+.portlet.grid .portlet-body .grid-paging {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  text-align: center;
+}
+.portlet.grid .portlet-body .item .item-icon {
+  float: left;
+}
+.portlet.grid .portlet-body .item .item-icon .icon-question {
+  margin: 14px 0 0 10px;
+}
+.portlet.grid .portlet-title .grid-search {
+  display: inline-block
+}
+.portlet.grid .portlet-title .title-list-word {
+  font:bold 25px Arial
 }

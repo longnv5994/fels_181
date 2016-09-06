@@ -14,6 +14,9 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require_tree .
 
 $(document).ready(function(){
@@ -49,4 +52,38 @@ $(document).ready(function(){
     $(".tr-ans-"+id).remove();
     event.preventDefault();
   })
+
 });
+
+$(document).on('ready page:load', function() {
+  loadPageBody($('#grid-content'),$('#btnsearch').data('url'));
+  $('.grid-word').on('click','#btnsearch',function(){
+    console.log('fgf');
+    loadPageBody($('#grid-content'),$(this).data('url'));
+  })
+
+  $('.txtkeyword').keypress(function(e) {
+    if(e.which == 13) {
+      event.preventDefault();
+      $('#btnsearch').trigger('click');
+    }
+  });
+})
+
+function loadPageBody($container, url, data) {
+  try {
+    var dataseri = $('form').serialize();
+    $container.html("<img src='/assets/images/loading.gif' />");
+    var dfd = $.Deferred();
+    $container.load(url, dataseri, function (response, status, xhr) {
+      if (status == 'error') {
+        var msg = I18n.t("status.errors") + xhr.status + " " + xhr.statusText;
+        $container.html(msg);
+      }
+      return dfd.resolve();
+    });
+    return dfd.promise();
+  } catch (e) {
+    $container.html(e.message);
+  }
+}
