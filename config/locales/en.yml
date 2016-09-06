@@ -55,7 +55,7 @@ en:
   account: "Account"
   all_user: "All user"
   sure: "Are you sure?"
-  delete: " | delete"
+  delete: "delete"
   user_delete: "User deleted"
   Please_log_in: "Please login"
   not_admin: "Only admin can access"
@@ -85,6 +85,7 @@ en:
     list_word: List word
     create: "Word created"
     create_button: "Create word"
+    update_button: "Update word"
     save_button: "Save changes"
     update: "Word updated"
     miss: "Can not find word!"
@@ -92,7 +93,7 @@ en:
     save: "Save changes"
     not_create: "Can not create word"
     not_update: "Can not update word"
-    edit: "Edit word & answer"
+    edit: "Edit | "
     word_delete: "Word deleted"
     blank: "Can't found word!"
   word_answer:
@@ -100,7 +101,7 @@ en:
     update: "Word asnwer updated"
     miss: "Can not find word answer!"
     new_answer: "New answer"
-    answers: "Word answers"
+    answers: "Answers"
   time:
     formats:
       short_datetime: "%B %d, %Y"

@@ -9,7 +9,8 @@ class Word < ActiveRecord::Base
   has_many :results
   has_many :word_answers, dependent: :destroy
 
-  accepts_nested_attributes_for :word_answers
+  accepts_nested_attributes_for :word_answers,
+    reject_if: lambda {|a| a[:content].blank?}, allow_destroy: true
 
   validates :content, presence: true, length: {maximum: 140}
 end

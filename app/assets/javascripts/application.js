@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -11,57 +12,36 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
 //= require_tree .
 
-$(document).ready(function(){
-  var word_attribute_index = 0;
-    $('#btn').click(function(){
-      $('ol').append(
-        "<div class='tr-ans-"+word_attribute_index+" tr-ans'>"
-        + "<div class='col-md-7'>"
-        + "<label for='word_word_answers_attributes_"
-        + word_attribute_index
-        + "_word_answer'></label>"
-        + "<input type='text' name='word[word_answers_attributes]["
-        + word_attribute_index
-        + "][content]' id='word_word_answers_attributes_"
-        + word_attribute_index
-        + "_content'>"
-        + "</div>"
-        + "<div class='checkbox col-md-2'>"
-        + "<label><input value='true' type='radio' name='word[word_answers_attributes][0][is_correct]' >correct</label>"
-        + "</div>"
-        + "<div class='deletebox col-md-2'>"
-        + "<label><a href='javascript:;' class='btn-delete-ans' data-id='"
-        + word_attribute_index
-        + "' type='button'>delete</a></label>"
-        + "</div>"
-        + "</div>"
-      );
-    word_attribute_index++;
-  });
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp('new_' + association, 'g')
+  var answers = document.getElementsByClassName("answer_field");
+  if (answers.length < 5){
+    $('.new_answer').append(content.replace(regexp, new_id));
+  } else {
+    alert(I18n.t("max_answer"))
+  }
+}
 
-  $('.grid-answer').on('click','.btn-delete-ans',function(event){
-    var id = $(this).data("id");
-    $(".tr-ans-"+id).remove();
-    event.preventDefault();
-  })
-
-});
+function remove_fields(link) {
+  $(link).parent().find('input[type=hidden]').val('1');
+  var answer = $(link).parent().parent().hide();
+  $(answer).hide();
+}
 
 $(document).on('ready page:load', function() {
   loadPageBody($('#grid-content'),$('#btnsearch').data('url'));
   $('.grid-word').on('click','#btnsearch',function(){
-    console.log('fgf');
     loadPageBody($('#grid-content'),$(this).data('url'));
   })
-
   $('.txtkeyword').keypress(function(e) {
     if(e.which == 13) {
       event.preventDefault();
