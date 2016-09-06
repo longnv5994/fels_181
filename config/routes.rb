@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   get "/help", to: "static_pages#help"
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
+  get "/get_words", to: "words#get_words"
   resources :users, except: :delete
   resources :categories, except: [:new]
-  resources :words, only: :index do
-    resources :word_answers, only: :index
-  end
+  resources :words
   namespace :admin do
     resources :categories
     resources :users

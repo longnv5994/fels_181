@@ -82,6 +82,7 @@ en:
   word:
     all_word: "All words"
     all_word_answer: "Words and Answers"
+    list_word: List word
     create: "Word created"
     create_button: "Create word"
     save_button: "Save changes"
@@ -104,3 +105,5 @@ en:
     formats:
       short_datetime: "%B %d, %Y"
       long_datetime:  "%B %d, %Y, at %r"
+  keyword: Keyword
+  all: All

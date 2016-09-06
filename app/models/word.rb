@@ -2,6 +2,7 @@ class Word < ActiveRecord::Base
   scope :filter_category, ->(category_id = 0) do
     where("category_id = ?", "#{category_id}")
   end
+  scope :where_contains, -> keyword {where("content like ?","%#{keyword}%")}
 
   belongs_to :category
   has_many :results
