@@ -107,3 +107,19 @@ en:
       long_datetime:  "%B %d, %Y, at %r"
   keyword: Keyword
   all: All
+  lesson:
+    list_lesson: List lesson
+    create_date: "Created Date"
+    category: "Category"
+    status: "Status"
+    question: "Number questions"
+    result: "Result"
+    subject: "Subject"
+    start: "Start"
+    finished: "finished"
+    num_question: "Total question"
+    wait_contest: "wait contest"
+    create:
+      success: "Create success"
+      create_fail: "Create fail"
+    error_check_word: "Note: category or words by category"

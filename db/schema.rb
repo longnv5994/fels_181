@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20160830063909) do
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.integer  "category_id"
     t.boolean  "is_complete", default: false

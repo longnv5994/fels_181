@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/help", to: "static_pages#help"
-  get "/signup", to: "users#new"
+  get "/signup", to: "admin/users#new"
   post "/signup", to: "users#create"
   get "/get_words", to: "words#get_words"
   resources :users, except: :delete
   resources :categories, except: [:new]
   resources :words
+  resources :lessons
   namespace :admin do
     resources :categories
     resources :users

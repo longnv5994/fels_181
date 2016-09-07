@@ -3,6 +3,7 @@ class Word < ActiveRecord::Base
     where("category_id = ?", "#{category_id}")
   end
   scope :where_contains, -> keyword {where("content like ?","%#{keyword}%")}
+  scope :random_words, -> {order("RANDOM()")}
 
   belongs_to :category
   has_many :results
