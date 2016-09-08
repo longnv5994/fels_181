@@ -38,6 +38,6 @@ class User < ActiveRecord::Base
   end
 
   def current_user? user
-    user == current_user
+    user.id == self.id
   end
 end
