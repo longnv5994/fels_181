@@ -1,3 +1,5 @@
 avatar:
   size: "100"
 per_page: 5
+min_words: 1
+ans_lesson: 4
