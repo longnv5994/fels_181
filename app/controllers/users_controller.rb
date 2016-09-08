@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @activity = Activity.where(user_id: @user.id).order(created_at: :desc).
+      paginate page: params[:page]
   end
 
   def index
