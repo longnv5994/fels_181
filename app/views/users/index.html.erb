@@ -1,0 +1,16 @@
+<% provide :title, t("all_user") %>
+<div class="portlet grid">
+  <div class="portlet-title">
+    <div class="caption">
+      <span><%= t "all_user" %></span>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="grid-content">
+      <%= render @users %>
+    </div>
+    <div class="grid-paging">
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>

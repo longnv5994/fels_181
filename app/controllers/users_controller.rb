@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   before_action :verify_admin, only: :destroy
 
@@ -10,7 +10,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def edit
@@ -19,7 +19,7 @@ class Admin::UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       flash[:success] = t "update_profile"
-      redirect_to [:admin, @user]
+      redirect_to @user
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     User.find_by(id: params[:id]).destroy
     flash[:success] = t "user_delete"
-    redirect_to admin_users_url
+    redirect_to users_url
   end
 
   private

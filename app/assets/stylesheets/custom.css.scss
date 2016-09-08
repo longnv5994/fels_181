@@ -263,11 +263,12 @@ input {
     background-color: #f9f9f9;
 }
 .portlet.grid .portlet-body .item .item-img {
-  width: 40px;
+  width: 55px;
   float: left;
 }
 .portlet.grid .portlet-body .item .item-img img {
   border-radius: 50%;
+  max-width: 50px;
 }
 .portlet.grid .portlet-body .item .item-body {
   padding-left: 15px;
@@ -286,15 +287,16 @@ input {
   white-space: nowrap;
   color: #A6A8A8;
   text-align: center;
-  width: 150px;
+  width: 180px;
   display: inline-block;
 }
 .portlet.grid .portlet-body .item .item-body .item-buttons {
   text-align: center;
-  width: 160px;
+  width: 150px;
   white-space: nowrap;
   display: inline-block;
-  display: inline-block;
+  float: right;
+  margin-top: 15px;
 }
 .portlet.grid .portlet-body .grid-paging {
   display: block;
