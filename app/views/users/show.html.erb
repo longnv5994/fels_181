@@ -5,8 +5,29 @@
       <h2>
         <%= gravatar_for @user %>
         <%= @user.name %>
-        <p><%= link_to t("edit_profile"), edit_user_path, class: "btn" %></p>
+        <p>
+          <% if logged_in? and current_user.current_user?(@user) %>
+            <%= link_to t("edit_profile"), edit_user_path, class: "btn" %>
+          <% end %>
+        </p>
       </h2>
+    </section>
+    <section class="stats">
+    <% @user ||= current_user %>
+      <div class="stats">
+        <a href="#">
+          <strong id="following" class="stat">
+            <%= @user.following.count %>
+          </strong>
+          <%= t "following" %>
+        </a>
+        <a href="#">
+          <strong id="followers" class="stat">
+            <%= @user.followers.count %>
+          </strong>
+          <%= t "followers" %>
+        </a>
+      </div>
     </section>
   </div>
 </div>

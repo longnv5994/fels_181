@@ -55,7 +55,7 @@ en:
   account: "Account"
   all_user: "All user"
   sure: "Are you sure?"
-  delete: "delete"
+  delete: "Delete"
   user_delete: "User deleted"
   Please_log_in: "Please login"
   not_admin: "Only admin can access"
@@ -66,6 +66,10 @@ en:
   title: Title
   function: Function
   ord: Ord
+  follow: Follow
+  unfollow: Unfollow
+  following: Following
+  followers: Followers
   category:
     categories: "Category"
     btn_update: "Update Category"

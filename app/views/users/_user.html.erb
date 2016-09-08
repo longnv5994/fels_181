@@ -10,10 +10,14 @@
       <span class="mt-action-date"><%= l user.created_at, format: :long %></span>
     </div>
     <div class="item-buttons">
-      <button type="button" class="btn btn-xs btn-success">Follow</button>
       <% if logged_in? and current_user.is_admin? and
         !current_user.current_user?(user) %>
-
+          <%= link_to t(current_user.following?(user) ? "unfollow" : "follow"),
+            "javasctip:;", class: "btn btn-xs btn-"+
+            (current_user.following?(user) ?
+            "info unfollow" : "success follow") +" btn-follow",
+            data: {id: user.id, follow: relationships_path,
+            unfollow: relationship_path(user)} %>
           <%= link_to t("delete"), user, method: :delete,
             data: {confirm: t("sure")}, class: "btn btn-xs btn-danger" %>
       <% end %>
