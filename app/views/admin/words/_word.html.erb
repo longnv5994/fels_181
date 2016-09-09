@@ -24,8 +24,8 @@
                     </div>
                     <div class="lst-answer">
                       <ol>
-                        <% word.word_answers.each do |word_answers| %>
-                          <li><%= word_answers.content %></li>
+                        <% @answers.where(word_id: word.id).each do |answer| %>
+                          <li><%= answer.content %></li>
                         <% end %>
                       </ol>
                     </div>

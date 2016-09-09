@@ -4,7 +4,7 @@ class Admin::WordsController < ApplicationController
 
   def new
     @word = Word.new
-    @word.word_answers.build
+    Settings.build.repeat.times {@word.word_answers.build}
     @categories = Category.all
   end
 
@@ -21,6 +21,7 @@ class Admin::WordsController < ApplicationController
       @words = Word.order(created_at: :desc).paginate page: params[:page],
         per_page: Settings.per_page
     end
+    @answers = WordAnswer.find_answers @words.ids
   end
 
   def create
@@ -53,7 +54,7 @@ class Admin::WordsController < ApplicationController
   private
     def word_params
       params.require(:word).permit :category_id, :content, word_answers_attributes:
-        [:id, :content, :is_correct]
+        [:id, :content, :is_correct, :_destroy]
     end
 
     def load_word
