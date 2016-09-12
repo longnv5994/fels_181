@@ -48,6 +48,29 @@ $(document).on('ready page:load', function() {
       $('#btnsearch').trigger('click');
     }
   });
+
+  $('.btn-follow').click(function(e){
+    var link = $(this).hasClass("follow") ? "follow" : "unfollow";
+    var method = $(this).hasClass("follow") ? "POST" : "DELETE";
+    $btnfollow = $(this);
+    $.ajax({
+      url: $(this).data(link),
+      data: {id: $(this).data("id")},
+      method: method
+    }).done(function(data) {
+      if($btnfollow.hasClass("follow")){
+        $btnfollow.removeClass("follow btn-success");
+        $btnfollow.addClass("unfollow btn-info");
+        $btnfollow.text(I18n.t("unfollow"));
+      }
+      else {
+        $btnfollow.addClass("follow btn-success");
+        $btnfollow.removeClass("unfollow btn-info");
+        $btnfollow.text(I18n.t("follow"));
+      }
+    });
+    e.preventDefault();
+  });
 })
 
 function loadPageBody($container, url, data) {

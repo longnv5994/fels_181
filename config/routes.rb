@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :words
   resources :users
   resources :lessons
+  resources :relationships, only: [:create, :destroy]
   namespace :admin do
     resources :categories
     resources :words do
