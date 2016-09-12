@@ -14,6 +14,8 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new category_id: params[:lesson][:category_id],
       user_id: current_user.id
     if @lesson.save
+      current_user.create_activity Activity.activity_types[:create_lesson],
+        current_user.id
       flash[:success] = t "lesson.create.success"
     else
       flash[:danger] =  t "lesson.create.create_fail"
@@ -32,10 +34,15 @@ class LessonsController < ApplicationController
     if params[:commit].eql? t("lesson.submit_btn")
       completed_lesson_params[:is_complete] = true
       @lesson.update_attributes completed_lesson_params
+      current_user.create_activity Activity.activity_types[:finished],
+        current_user.id
       redirect_to @lesson
     else
       completed_lesson_params[:is_complete] = false
       @lesson.update_attributes completed_lesson_params
+
+    current_user.create_activity Activity.activity_types[:learn_lesson],
+        current_user.id
       flash[:warning] = t "lesson.save_success"
       redirect_to lessons_path
     end

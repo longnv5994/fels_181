@@ -66,8 +66,8 @@ en:
   title: Title
   function: Function
   ord: Ord
-  follow: Follow
-  unfollow: Unfollow
+  follow: " Follow "
+  unfollow: " Unfollow "
   following: Following
   followers: Followers
   category:
@@ -139,7 +139,20 @@ en:
     already_submit: "Lesson already submit"
     correct_answer: "Correct"
     incorrect_answer: "Incorrect"
+    finished: "finished"
+    finished-lesson: " finished lesson"
+    num_question: "Total question"
+    wait_contest: "wait contest"
+    create_lesson: " create lesson"
+    learn_lesson: " learn lesson"
     create:
       success: "Create success"
       create_fail: "Create fail"
     error_check_word: "Note: category or words by category"
+  activity_title: Activity by %{name}
+  activity: Activity
+  timestamp: Time
+  time_ago: "%{time} ago"
+  none: "none"
+  learned: "Learned"
+  unlearned: "Unlearned"
