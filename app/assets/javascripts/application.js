@@ -23,12 +23,7 @@
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp('new_' + association, 'g')
-  var answers = document.getElementsByClassName("answer_field");
-  if (answers.length < 5){
-    $('.new_answer').append(content.replace(regexp, new_id));
-  } else {
-    alert(I18n.t("max_answer"))
-  }
+  $('.new_answer').append(content.replace(regexp, new_id));
 }
 
 function remove_fields(link) {

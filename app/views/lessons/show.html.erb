@@ -1,0 +1,19 @@
+<% provide :title, t("lesson.title") %>
+<div>
+  <%= @lesson.created_at %>
+  <span>
+    <h4><%= t "lesson.your_score" %></h4>
+    <%= @lesson.score %>
+  </span>
+</div>
+<h1><%= t "lesson.your_answers"%></h1>
+<%= form_for @lesson do |f| %>
+  <ol>
+    <%= f.fields_for :results do |builder| %>
+      <%= render "result", f: builder %>
+    <% end %>
+  </ol>
+<% end %>
+<div>
+  <%= link_to t("lesson.title"), lessons_path, class: "btn btn-primary button" %>
+</div>

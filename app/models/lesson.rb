@@ -6,6 +6,13 @@ class Lesson < ActiveRecord::Base
   validate :validate_words_size, on: :create
   before_create :assign_word
 
+  accepts_nested_attributes_for :results
+
+  def score
+    "#{self.results.select{|result| result if result.is_correct}.count}/
+      #{self.results.count}"
+  end
+
   private
   def assign_word
     self.category.words.random_words.limit(Settings.ans_lesson).each do |word|
