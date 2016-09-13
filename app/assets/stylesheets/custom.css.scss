@@ -315,6 +315,9 @@ input {
   font-weight: 600;
   margin: 10px 0 0 0
 }
+.portlet.grid .portlet-body .item .item-body .lst-answer ol {
+  padding-left: 20px;
+}
 .portlet.grid .portlet-body .item .item-body .item-datetime {
   white-space: nowrap;
   color: #A6A8A8;
@@ -347,4 +350,9 @@ input {
 }
 .portlet.grid .portlet-title .title-list-word {
   font:bold 25px Arial
+}
+
+.grid-word .chk-learn {
+  display: inline-flex;
+  margin-top: 5px;
 }

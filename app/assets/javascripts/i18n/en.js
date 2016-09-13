@@ -5,7 +5,8 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}),
       "errors": "Error, Please check internet"
     },
     "follow": "Follow",
-    "unfollow": "Unfollow"
-    "max_answer" : "Maximum 5 answers"
-    "min_answer" : "Minimum 2 answers"
+    "unfollow": "Unfollow",
+    "max_answer" : "Maximum 5 answers",
+    "min_answer" : "Minimum 2 answers",
+    "exit": "Exit"
   });

@@ -32,6 +32,9 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html {render template: "admin/categories/show", layout: false}
+    end
   end
 
   private
