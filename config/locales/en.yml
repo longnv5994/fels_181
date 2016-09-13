@@ -154,3 +154,5 @@ en:
   timestamp: Time
   time_ago: "%{time} ago"
   none: "none"
+  learned: "Learned"
+  unlearned: "Unlearned"
