@@ -1,11 +1,19 @@
 <%= form_for [:admin, @word] do |f| %>
   <%= render "/shared/error_messages", object: f.object %>
+  <div class="col-md-2 col-md-offset-1">
+    <% if @categories.present? %>
+      <label><%= t "category.categories" %></label>
+        <%= f.select "category_id",
+          options_for_select(@categories.collect {|category| [category.name, category.id]}),
+          {include_blank: t("none"), selected: f.object.category_id} %>
+    <% end %>
+  </div>
   <div class="col-md-2">
     <%= f.label :word %>
     <%= f.text_field :content, class: "form-control" %>
-    <%= f.submit t("word.create_button"), class: "btn btn-primary botton" %>
+    <%= f.submit (yield :button_text), class: "btn btn-primary" %>
   </div>
-  <div class="col-md-6 col-md-offset-1">
+  <div class="col-md-6">
     <div class="col-md-10 form-group">
       <div class="row">
         <div class="col-md-12">
@@ -19,13 +27,9 @@
         <div class="new_answer">
         </div>
       </div>
-      <%= link_to_add_fields raw("<span class='btn btn-primary'>#{t "word.add"}</span>"), f, :word_answers %>
+      <%= link_to_add_fields raw("#{t "word_answer.new_answer"}
+        <i class='fa fa-plus-square fa-lg' aria-hidden='true'></i>"),
+        f, :word_answers %>
     </div>
-  </div>
-  <div class="col-md-2 col-md-offset-1">
-    <% if @categories.present? %>
-      <label><%= t "category.categories" %></label>
-        <%= f.select "category_id", options_for_select(@categories.collect {|category| [category.name, category.id]}) %>
-    <% end %>
   </div>
 <% end %>

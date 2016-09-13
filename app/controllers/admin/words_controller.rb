@@ -1,20 +1,18 @@
 class Admin::WordsController < ApplicationController
-  before_action :load_word, only: [:edit, :update]
+  before_action :load_word, only: [:edit, :update, :destroy]
   before_action :logged_in_user, :verify_admin
+  before_action :load_categories, except: [:destroy, :show]
 
   def new
     @word = Word.new
     Settings.build.repeat.times {@word.word_answers.build}
-    @categories = Category.all
   end
 
   def edit
-    @categories = Category.all
   end
 
   def index
-    @categories = Category.all
-    if params[:search]
+    if params[:search].present?
       @words = Word.filter_category(params[:search]).paginate page: params[:page],
         per_page: Settings.per_page
     else
@@ -36,18 +34,28 @@ class Admin::WordsController < ApplicationController
   end
 
   def update
-    if @word.update_attributes word_params
-      flash[:success] = t "word.update"
-      redirect_to admin_words_url
+    if @word.verify_used_word
+      flash[:danger] = t "word.can_not_delete"
     else
-      flash[:danger] = t "word.not_update"
-      render :edit
+      if @word.update_attributes word_params
+        flash[:success] = t "word.update"
+      else
+        flash[:danger] = t "word.not_update"
+      end
     end
+    redirect_to admin_words_url
   end
 
   def destroy
-    Word.find_by(id: params[:id]).destroy
-    flash[:success] = t "word.word_delete"
+    if @word.verify_used_word
+      flash[:danger] = t "word.can_not_delete"
+    else
+      if @word.destroy
+        flash[:success] = t "word.word_delete"
+      else
+        flash[:danger] = t "word.not_delete"
+      end
+    end
     redirect_to admin_words_url
   end
 
@@ -55,6 +63,10 @@ class Admin::WordsController < ApplicationController
     def word_params
       params.require(:word).permit :category_id, :content, word_answers_attributes:
         [:id, :content, :is_correct, :_destroy]
+    end
+
+    def load_categories
+      @categories = Category.all
     end
 
     def load_word

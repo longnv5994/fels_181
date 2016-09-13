@@ -30,6 +30,7 @@ gem "bootstrap-sass", "~> 3.3.1"
 gem "config"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
+gem "font-awesome-rails"
 # Use Unicorn as the app server
 # gem "unicorn"
 

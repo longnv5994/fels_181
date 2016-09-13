@@ -65,12 +65,15 @@ en:
   created: Created
   title: Title
   function: Function
+  none: "None"
+  all: "All"
   ord: Ord
   follow: " Follow "
   unfollow: " Unfollow "
   following: Following
   followers: Followers
   category:
+    all_categories: "All categories"
     categories: "Category"
     btn_update: "Update Category"
     btn_add: "Add Category"
@@ -83,7 +86,8 @@ en:
     delete: "Delete"
     detail: ".....Detail"
     blank: "Can't found category!"
-    search: "Search category"
+    search: "Search by category"
+    can_not_delete: "This category have been used in relative data!"
   word:
     all_word: "All words"
     all_word_answer: "Words and Answers"
@@ -98,14 +102,16 @@ en:
     save: "Save changes"
     not_create: "Can not create word"
     not_update: "Can not update word"
-    edit: "Edit | "
+    edit: "Edit word and answer "
     word_delete: "Word deleted"
+    not_delete: "Word not deleted"
     blank: "Can't found word!"
+    can_not_delete: "This word have been used in relative data!"
   word_answer:
     create: "Word answer created"
     update: "Word asnwer updated"
     miss: "Can not find word answer!"
-    new_answer: "New answer"
+    new_answer: "New answer "
     answers: "Answers"
   time:
     formats:
@@ -154,3 +160,8 @@ en:
   timestamp: Time
   time_ago: "%{time} ago"
   none: "none"
+  learned: "Learned"
+  unlearned: "Unlearned"
+  messages:
+    validate_answer_size_correct: "must have at least one answer correct"
+    validate_answer_size: "must have from 2 to 4"
