@@ -27,8 +27,13 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
-    redirect_to :back
+    if @category.verify_destroy_category
+      flash[:danger] = t "category.can_not_delete"
+    else
+      @category.destroy
+      flash[:success] = t "category.delete"
+    end
+    redirect_to admin_categories_path
   end
 
   def show

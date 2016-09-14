@@ -23,13 +23,28 @@
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp('new_' + association, 'g')
-  $('.new_answer').append(content.replace(regexp, new_id));
+  var answers = document.getElementsByClassName("answer_field");
+  console.log(answers.length);
+  if(answers.length < 4 ) {
+    $('.new_answer').append(content.replace(regexp, new_id));
+  }
+  else {
+    alert(I18n.t("max_answers"));
+  }
 }
 
 function remove_fields(link) {
-  $(link).parent().find('input[type=hidden]').val('1');
-  var answer = $(link).parent().parent().hide();
-  $(answer).hide();
+  var answer = $(link).parent().parent();
+  var answers = document.getElementsByClassName("answer_field");
+  console.log(answers.length);
+  if(answers.length > 2 ) {
+    $(link).parent().find('input[type=hidden]').val('1');
+    answers[answer.length - 1].removeAttribute("class");
+    $(answer).hide();
+  }
+  else {
+    alert(I18n.t("min_answers"));
+  }
 }
 
 $(document).on('ready page:load', function() {
@@ -85,8 +100,14 @@ $(document).on('ready page:load', function() {
     $.extend(dataFinish, datapost);
     openDialogView('Info', $(this).data('view'), datapost, $grid.data("size"));
     event.stopPropagation();
+  })
+
+  $('.content-main').on('change','.radio_answer',function() {
+    $('.radio_answer').prop('checked', false);
+    $(this).prop('checked', true);
   });
-})
+
+});
 
 function loadPageBody($container, url, data) {
   try {
