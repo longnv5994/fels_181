@@ -3,9 +3,9 @@
   <div class="col-md-2 col-md-offset-1">
     <% if @categories.present? %>
       <label><%= t "category.categories" %></label>
-        <%= f.select "category_id",
-          options_for_select(@categories.collect {|category| [category.name, category.id]}),
-          {include_blank: t("none"), selected: f.object.category_id} %>
+      <%= f.select "category_id",
+        options_for_select(@categories.collect {|category| [category.name, category.id]},
+        {include_blank: t("none"), selected: f.object.category_id}) %>
     <% end %>
   </div>
   <div class="col-md-2">

@@ -26,22 +26,22 @@ class Word < ActiveRecord::Base
   validates :content, presence: true, length: {maximum: 140}
   validate :validate_answer
 
-  private
-    def validate_answer
-      size_correct = self.word_answers.select{|answer| answer.is_correct}.size
-      if size_correct == 0
-        errors.add "correct_answer:", I18n.t("messages.validate_answer_size_correct")
-      end
-      correct_answer_size = self.word_answers.size
-      if Settings.answer_default > correct_answer_size ||
-        correct_answer_size > Settings.max_answer
-        errors.add "answer_size:", I18n.t("messages.validate_answer_size")
-      end
+  def verify_used_word
+    if self.lessons.any?
+      errors.add "Used_word:", I18n.t("word.can_not_delete")
     end
+  end
 
-    def verify_used_word
-      if self.lessons.any?
-        errors.add "Used_word:", I18n.t("word.can_not_delete")
-      end
+  private
+  def validate_answer
+    size_correct = self.word_answers.select{|answer| answer.is_correct}.size
+    if size_correct == 0
+      errors.add "correct_answer:", I18n.t("messages.validate_answer_size_correct")
     end
+    correct_answer_size = self.word_answers.size
+    if Settings.answer_default > correct_answer_size ||
+      correct_answer_size > Settings.max_answer
+      errors.add "answer_size:", I18n.t("messages.validate_answer_size")
+    end
+  end
 end
