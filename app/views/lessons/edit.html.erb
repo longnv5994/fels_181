@@ -1,0 +1,18 @@
+<label><%= t "lesson.num_question" %></label>
+<%= @lesson.results.size %>
+<%= form_for @lesson do |f| %>
+  <ol class="group-lesson">
+    <%= f.fields_for :results do |builder| %>
+        <%= render "result", f: builder %>
+    <% end %>
+  </ol>
+  <div class="btn-lesson">
+    <div class="col-sm-2">
+      <%= f.submit t("lesson.save_btn"), class: "btn btn-primary button" %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.submit t("lesson.submit_btn"), class: "btn btn-success button",
+        data: {confirm: t("lesson.sure")} %>
+    </div>
+  </div>
+<% end %>

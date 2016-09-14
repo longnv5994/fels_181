@@ -1,0 +1,170 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+
+en:
+
+  footer:
+    content: "The E-Learing System Create by"
+    and: "and"
+  header:
+    title: "E-Learning System"
+    home: "Home"
+    help: "Help"
+    signup: "Sign Up"
+  help:
+    content: "Contact to"
+    or: "or"
+  login: "Login"
+  transit: "Sign up now!"
+  remember: "Remember me on this computer"
+  title_head: " | E-Learning"
+  new_user: "New user?"
+  signup: "Signup"
+  create_account: "Create my account"
+  update_profile: "Profile updated"
+  edit: "Edit profile"
+  save_change: "Save changes"
+  create: "Account has been created! Please login!"
+  change: "Change avatar"
+  edit_profile: "Edit profile"
+  miss_user: "Can not found user"
+  login_invalid: "Invalid email/password combination"
+  welcome: "Welcome to E-Learning System"
+  user: "Users"
+  profile: "Profile"
+  setting: "Settings"
+  logout: "Logout"
+  account: "Account"
+  all_user: "All user"
+  sure: "Are you sure?"
+  delete: "Delete"
+  user_delete: "User deleted"
+  Please_log_in: "Please login"
+  not_admin: "Only admin can access"
+  add_category: "Add Category"
+  add_success: "Add category success!"
+  update_success: "Update category success!"
+  created: Created
+  title: Title
+  function: Function
+  none: "None"
+  all: "All"
+  ord: Ord
+  follow: " Follow "
+  unfollow: " Unfollow "
+  following: Following
+  followers: Followers
+  manager: "Manager"
+  category:
+    all_categories: "All categories"
+    categories: "Category"
+    btn_update: "Update Category"
+    btn_add: "Add Category"
+    edit_title: "Edit Category"
+    add_title: "Add Category"
+    show_title: "Show Category"
+    num_word: "Number of words"
+    text_add: "Create new category..."
+    edit: "Edit"
+    delete: "Delete"
+    detail: ".....Detail"
+    blank: "Can't found category!"
+    search: "Search by category"
+    can_not_delete: "This category have been used in relative data!"
+  word:
+    all_word: "All words"
+    all_word_answer: "Words and Answers"
+    list_word: List word
+    create: "Word created"
+    create_button: "Create word"
+    update_button: "Update word"
+    save_button: "Save changes"
+    update: "Word updated"
+    miss: "Can not find word!"
+    add: "Add word and answer"
+    save: "Save changes"
+    not_create: "Can not create word"
+    not_update: "Can not update word"
+    edit: "Edit word and answer "
+    word_delete: "Word deleted"
+    not_delete: "Word not deleted"
+    blank: "Can't found word!"
+    can_not_delete: "This word have been used in relative data!"
+    manager_word: "Manager word"
+  word_answer:
+    create: "Word answer created"
+    update: "Word asnwer updated"
+    miss: "Can not find word answer!"
+    new_answer: "New answer "
+    answers: "Answers"
+  time:
+    formats:
+      short_datetime: "%B %d, %Y"
+      long_datetime:  "%B %d, %Y, at %r"
+  keyword: Keyword
+  all: All
+  lesson:
+    title: "Lessons"
+    list_lesson: "List lesson"
+    your_answers: "Your answers"
+    your_score: "Your score:"
+    create_date: "Created Date"
+    category: "Category"
+    status: "Status"
+    question: "Number questions"
+    result: "Result"
+    subject: "Subject"
+    start: "Start"
+    finished: "Finished"
+    num_question: "Total question:"
+    wait_contest: "Wait contest"
+    correct_user_lesson: "You don't have permisson"
+    save_btn: "Save"
+    submit_btn: "Submit"
+    sure: "Are you sure?"
+    save_success: "Lesson saved!"
+    no_lesson_found: "Can not found lesson!"
+    verify_completed_lesson: "Lesson completed"
+    verify_uncompleted_lesson: "Lesson uncompleted"
+    already_submit: "Lesson already submit"
+    correct_answer: "Correct"
+    incorrect_answer: "Incorrect"
+    finished: "finished"
+    finished-lesson: " finished lesson"
+    num_question: "Total question"
+    wait_contest: "wait contest"
+    create_lesson: " create lesson"
+    learn_lesson: " learn lesson"
+    create:
+      success: "Create success"
+      create_fail: "Create fail"
+    error_check_word: "Note: category or words by category"
+  activity_title: Activity by %{name}
+  activity: Activity
+  timestamp: Time
+  time_ago: "%{time} ago"
+  none: "none"
+  learned: "Learned"
+  unlearned: "Unlearned"
+  messages:
+    validate_answer_size_correct: "must have at least one answer correct"
+    validate_answer_size: "must have from 2 to 4"

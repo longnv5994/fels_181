@@ -1,0 +1,10 @@
+avatar:
+  size: "100"
+per_page: 5
+build:
+  repeat: 2
+min_words: 1
+ans_lesson: 5
+word_filter: ["learned", "unlearned", "showall"]
+answer_default: 2
+max_answer: 4

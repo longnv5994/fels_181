@@ -1,0 +1,36 @@
+<div class="answer-list">
+  <!-- BEGIN: item -->
+  <% @words.each do |word| %>
+    <div class="item">
+      <div class="item-icon">
+        <i class="fa fa-question-circle-o icon-question" aria-hidden="true"></i>
+      </div>
+      <div class="item-body">
+        <div class="item-info">
+          <p class="mt-action-desc">
+            <%= word.content %>
+            <%= link_to edit_admin_word_path(word) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to admin_word_path(word), method: :delete, data: {confirm: t("sure")} do %>
+              <i class="fa fa-trash-o text-danger" aria-hidden="true"></i>
+            <% end %>
+        </div>
+        <div class="item-datetime">
+          <span class="mt-action-date"></span>
+        </div>
+        <div class="lst-answer">
+          <ul>
+            <% @answers.where(word_id: word.id).each do |answer| %>
+              <li><%= answer.content %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <!-- END: item -->
+</div>
+<div class="center">
+  <%= will_paginate %>
+</div>

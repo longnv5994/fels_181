@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <span class="activity_content">
+      <%= check_activity activity.action_type, activity.target_id, locals[:user] %>
+    </span>
+  </td>
+  <td class="text-right">
+    <span class="glyphicon glyphicon-calendar"></span>
+    <%= t "time_ago", time: time_ago_in_words(activity.created_at) %>
+  </td>
+</tr>

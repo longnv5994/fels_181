@@ -1,0 +1,56 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <div class="col-md-4">
+    <section class="user_info">
+      <h2>
+        <%= gravatar_for @user %>
+        <div>
+          <p><%= @user.name %></p>
+          <p class="info"><%= @user.email %><p>
+          <p class="btn-edit-profile">
+            <% if logged_in? and current_user.current_user? @user %>
+              <%= link_to t("edit_profile"), edit_user_path, class: "edit-pf" %>
+            <% end %>
+          </p>
+        </div>
+      </h2>
+    </section>
+    <section class="stats">
+    <% @user ||= current_user %>
+      <div class="stats">
+        <span>
+          <strong id="following" class="stat">
+            <%= @user.following.count %>
+          </strong>
+          <%= t "following" %>
+        </span>
+        <span>
+          <strong id="followers" class="stat">
+            <%= @user.followers.count %>
+          </strong>
+          <%= t "followers" %>
+        </span>
+      </div>
+    </section>
+  </div>
+  <div class="col-md-8">
+    <h3 class="center"><%= t("activity_title", name: @user.name) %></h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t "activity" %></th>
+          <th><%= t "timestamp" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @activity.each do |activity| %>
+          <%= render "shared/activity", activity: activity,
+            locals: {user: @user} %>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="pagingnate">
+      <%= will_paginate @activity %>
+    </div>
+  </div>
+</div>

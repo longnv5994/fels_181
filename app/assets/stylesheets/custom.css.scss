@@ -1,0 +1,400 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$gray-medium-light: #eaeaea;
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: blue;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+.btn-submit-form {
+  margin-top: 5px
+}
+
+.btn100per{
+  width: 100%;
+}
+
+table tr td {
+  vertical-align: middle !important;
+}
+table .underline {
+  text-decoration: underline;
+}
+table th {
+  text-align: center
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.content-main {
+  min-height: 650px
+}
+
+.header_botton a{
+  color: white;
+  font: Sans-serif;
+  font-weight: bord;
+  &:hover {
+    color: black;
+    background: none;
+  }
+}
+
+.header_bar{
+  background-color: #337ab7;
+}
+
+footer {
+  overflow: hidden;
+  clear: both;
+  color: $gray-light;
+  padding: 30px 10px;
+  background: #ececec;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  position: relative;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 9px 0;
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.page_resize{
+  padding: 30px 30px 50px 30px;
+}
+
+.footer_resize{
+  padding-bottom: 0px;
+}
+
+.user_info {
+    margin-top: 20px;
+    p {
+      font-size: 18px;
+      text-align: left;
+    }
+    h2{
+      margin: 0;
+      padding: 0;
+      img {
+        border-radius: 50%;
+        border: 1px solid #ddd;
+      }
+      p.btn-edit-profile {
+        font: normal 14px Arial;
+        a {
+          text-decoration: underline
+        }
+      }
+      p.info {
+        font: normal 14px Arial;
+      }
+    }
+}
+
+.stats {
+  margin-top: 10px
+}
+
+.botton {
+  margin-top: 20px;
+  color: green;
+}
+
+.categories {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+#myform {
+  display: none;
+}
+.fix-paging {
+  text-align: center;
+  div.pagination {
+    margin:10px 0;
+  }
+  ul.pagination {
+    margin:0;
+  }
+}
+
+.grid-answer {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Begin portlet gird system */
+.portlet.grid .portlet-title {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  overflow: hidden;
+}
+.portlet.grid .portlet-title .caption {
+  display: block;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 10px 0;
+  color: #666;
+  padding: 10px 0;
+  clear: both;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body {
+  padding-top: 5px;
+}
+.portlet.grid .portlet-body .item {
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #e7ecf1;
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body .item:nth-child(odd){
+    background-color: #f9f9f9;
+}
+.portlet.grid .portlet-body .item .item-img {
+  width: 55px;
+  float: left;
+}
+.portlet.grid .portlet-body .item .item-img img {
+  border-radius: 50%;
+  max-width: 50px;
+}
+.portlet.grid .portlet-body .item .item-body {
+  padding-left: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body .item .item-body .item-info {
+  display: inline-block;
+}
+.portlet.grid .portlet-body .item .item-body .item-info p {
+  color: #060606;
+  font-weight: 600;
+  margin: 10px 0 0 0
+}
+.portlet.grid .portlet-body .item .item-body .lst-answer ol {
+  padding-left: 20px;
+}
+.portlet.grid .portlet-body .item .item-body .item-datetime {
+  white-space: nowrap;
+  color: #A6A8A8;
+  text-align: center;
+  width: 180px;
+  display: inline-block;
+}
+.portlet.grid .portlet-body .item .item-body .item-buttons {
+  text-align: center;
+  width: 150px;
+  white-space: nowrap;
+  display: inline-block;
+  float: right;
+  margin-top: 15px;
+}
+.portlet.grid .portlet-body .grid-paging {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  text-align: center;
+}
+.portlet.grid .portlet-body .item .item-icon {
+  float: left;
+}
+.portlet.grid .portlet-body .item .item-icon .icon-question {
+  margin: 14px 0 0 10px;
+}
+.portlet.grid .portlet-title .grid-search {
+  display: inline-block
+}
+.portlet.grid .portlet-title .title-list-word {
+  font:bold 25px Arial
+}
+
+.grid-word .chk-learn {
+  display: inline-flex;
+  margin-top: 5px;
+}
+
+.btn-lesson {
+  padding-top: 5px;
+  border-top: 1px solid #ddd;
+}
+
+ul.lesson_word {
+  padding-left: 0;
+  list-style: none
+}
+ul.lesson_word .word_answer {
+  clear: both;
+  padding-left: 20px;
+}
+ul.lesson_word .word_answer span {
+  float: left;
+}
+ul.lesson_word .word_answer span.rd-item input {
+  width: auto;
+}
+
+ol.group-lesson {
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+ol.group-lesson li {
+  clear: both;
+}
+
+ol.group-lesson li.item-word{
+
+}
+
+ol .lesson-correct{
+  clear: both;
+}
+
+.score h4 {
+  display: inline-block;
+}
