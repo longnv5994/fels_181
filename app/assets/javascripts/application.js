@@ -83,14 +83,14 @@ $(document).on('ready page:load', function() {
     e.preventDefault();
   });
 
-  $('.grid-word').on('click','ul.pagination li a', function(e){
+  $('.grid-word').on('click','.filter-lesson ul.pagination li a', function(e){
     var dataseri = $('form').serialize();
     dataseri = dataseri + "&page=" + $(this).text();
     loadPageBody($('#grid-content'), $('#btnsearch').data('url'), dataseri);
     e.preventDefault();
   })
 
-  $(document).on('click', 'a.act-view', function (event) {
+  $('a.act-view').click(function (event) {
     var $grid = $(this).closest("div.grid-data");
     var datapost = $grid.data("parameters");
     if (datapost == 'undefined') {

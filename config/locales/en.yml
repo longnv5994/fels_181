@@ -48,6 +48,7 @@ en:
   edit_profile: "Edit profile"
   miss_user: "Can not found user"
   login_invalid: "Invalid email/password combination"
+  welcome: "Welcome to E-Learning System"
   user: "Users"
   profile: "Profile"
   setting: "Settings"
@@ -72,6 +73,7 @@ en:
   unfollow: " Unfollow "
   following: Following
   followers: Followers
+  manager: "Manager"
   category:
     all_categories: "All categories"
     categories: "Category"
@@ -107,6 +109,7 @@ en:
     not_delete: "Word not deleted"
     blank: "Can't found word!"
     can_not_delete: "This word have been used in relative data!"
+    manager_word: "Manager word"
   word_answer:
     create: "Word answer created"
     update: "Word asnwer updated"

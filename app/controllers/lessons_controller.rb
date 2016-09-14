@@ -6,8 +6,8 @@ class LessonsController < ApplicationController
 
   def index
     @lesson = Lesson.new
-    @lessons = current_user.lessons.paginate page: params[:page],
-      per_page: Settings.per_page
+    @lessons = current_user.lessons.order(created_at: :desc).
+      paginate page: params[:page], per_page: Settings.per_page
   end
 
   def create

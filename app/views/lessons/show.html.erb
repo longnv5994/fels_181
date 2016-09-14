@@ -1,10 +1,10 @@
 <% provide :title, t("lesson.title") %>
 <div>
   <%= @lesson.created_at %>
-  <span>
+  <div class="score">
     <h4><%= t "lesson.your_score" %></h4>
     <%= @lesson.score %>
-  </span>
+  </div>
 </div>
 <h1><%= t "lesson.your_answers"%></h1>
 <%= form_for @lesson do |f| %>

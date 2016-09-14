@@ -18,18 +18,18 @@
     <section class="stats">
     <% @user ||= current_user %>
       <div class="stats">
-        <a href="#">
+        <span>
           <strong id="following" class="stat">
             <%= @user.following.count %>
           </strong>
           <%= t "following" %>
-        </a>
-        <a href="#">
+        </span>
+        <span>
           <strong id="followers" class="stat">
             <%= @user.followers.count %>
           </strong>
           <%= t "followers" %>
-        </a>
+        </span>
       </div>
     </section>
   </div>
