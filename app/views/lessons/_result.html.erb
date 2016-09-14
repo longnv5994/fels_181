@@ -1,14 +1,20 @@
-<li><%= f.label f.object.word.content %></li>
-<div class="lesson_word">
-  <% f.object.word.word_answers.each do |answer| %>
-    <div class="word_answer">
-      <%= f.radio_button :word_answer_id, answer.id,
-        disabled: f.object.lesson.is_complete? %>
-      <%= answer.content %>
-    </div>
-  <% end %>
+<li class="item-word">
+  <%= f.label f.object.word.content %>
+  <ul class="lesson_word">
+    <% f.object.word.word_answers.each do |answer| %>
+      <li class="word_answer">
+        <span class="rd-item">
+          <%= f.radio_button :word_answer_id, answer.id,
+            disabled: f.object.lesson.is_complete? %>
+        </span>
+        <span class="rd-content">
+          <%= answer.content %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
   <% if f.object.lesson.is_complete? %>
-    <div>
+    <p class="lesson-correct">
       <% if f.object.is_correct %>
         <font color="green">
           <%= t "lesson.correct_answer" %>
@@ -18,6 +24,6 @@
           <%= t "lesson.incorrect_answer" %>
         </font>
       <% end %>
-    </div>
+    </p>
   <% end %>
-</div>
+</li>

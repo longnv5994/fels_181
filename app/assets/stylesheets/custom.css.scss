@@ -83,7 +83,7 @@ table th {
 }
 
 .content-main {
-  min-height: 800px
+  min-height: 650px
 }
 
 .header_botton a{
@@ -104,7 +104,8 @@ footer {
   overflow: hidden;
   clear: both;
   color: $gray-light;
-  padding: 30px 0;
+  padding: 30px 10px;
+  background: #ececec;
   a {
     color: $gray;
     &:hover {
@@ -355,4 +356,45 @@ input {
 .grid-word .chk-learn {
   display: inline-flex;
   margin-top: 5px;
+}
+
+.btn-lesson {
+  padding-top: 5px;
+  border-top: 1px solid #ddd;
+}
+
+ul.lesson_word {
+  padding-left: 0;
+  list-style: none
+}
+ul.lesson_word .word_answer {
+  clear: both;
+  padding-left: 20px;
+}
+ul.lesson_word .word_answer span {
+  float: left;
+}
+ul.lesson_word .word_answer span.rd-item input {
+  width: auto;
+}
+
+ol.group-lesson {
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+ol.group-lesson li {
+  clear: both;
+}
+
+ol.group-lesson li.item-word{
+
+}
+
+ol .lesson-correct{
+  clear: both;
+}
+
+.score h4 {
+  display: inline-block;
 }
