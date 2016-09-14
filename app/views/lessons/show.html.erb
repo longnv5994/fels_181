@@ -1,19 +1,22 @@
 <% provide :title, t("lesson.title") %>
-<div>
-  <%= @lesson.created_at %>
-  <div class="score">
+<div class="col-md-12">
+  <div class="col-md-6">
+    <%= @lesson.created_at %>
+  </div>
+  <div class="score col-md-2 col-md-offset-4">
     <h4><%= t "lesson.your_score" %></h4>
-    <%= @lesson.score %>
+    <ol><%= @lesson.score %></ol>
   </div>
 </div>
 <h1><%= t "lesson.your_answers"%></h1>
 <%= form_for @lesson do |f| %>
-  <ol>
+  <ol class="group-lesson">
     <%= f.fields_for :results do |builder| %>
       <%= render "result", f: builder %>
     <% end %>
   </ol>
 <% end %>
-<div>
-  <%= link_to t("lesson.title"), lessons_path, class: "btn btn-primary button" %>
+<div class="text-center">
+  <i>
+    <%= link_to t("lesson.back_list"), lessons_path, class:"fa fa-2x fa-chevron-circle-left" %></i>
 </div>

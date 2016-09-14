@@ -6,7 +6,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}),
     },
     "follow": "Follow",
     "unfollow": "Unfollow",
-    "max_answer" : "Maximum 5 answers",
-    "min_answer" : "Minimum 2 answers",
+    "max_answers" : "Maximum 4 answers",
+    "min_answers" : "Minimum 2 answers",
     "exit": "Exit"
   });

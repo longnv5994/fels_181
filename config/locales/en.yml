@@ -26,14 +26,15 @@ en:
     content: "The E-Learing System Create by"
     and: "and"
   header:
-    title: "E-Learning System"
-    home: "Home"
-    help: "Help"
-    signup: "Sign Up"
+    title: " E-Learning System"
+    home: " Home"
+    help: " Help"
+    signup: " Sign Up"
   help:
     content: "Contact to"
     or: "or"
-  login: "Login"
+  login: " Login"
+  undefine_user: "undefined user"
   transit: "Sign up now!"
   remember: "Remember me on this computer"
   title_head: " | E-Learning"
@@ -49,10 +50,10 @@ en:
   miss_user: "Can not found user"
   login_invalid: "Invalid email/password combination"
   welcome: "Welcome to E-Learning System"
-  user: "Users"
-  profile: "Profile"
-  setting: "Settings"
-  logout: "Logout"
+  user: " Users"
+  profile: " Profile"
+  setting: " Settings"
+  logout: " Logout"
   account: "Account"
   all_user: "All user"
   sure: "Are you sure?"
@@ -73,10 +74,10 @@ en:
   unfollow: " Unfollow "
   following: Following
   followers: Followers
-  manager: "Manager"
+  manager: " Manager"
   category:
     all_categories: "All categories"
-    categories: "Category"
+    categories: " Category"
     btn_update: "Update Category"
     btn_add: "Add Category"
     edit_title: "Edit Category"
@@ -93,7 +94,7 @@ en:
   word:
     all_word: "All words"
     all_word_answer: "Words and Answers"
-    list_word: List word
+    list_word: " List word"
     create: "Word created"
     create_button: "Create word"
     update_button: "Update word"
@@ -109,7 +110,7 @@ en:
     not_delete: "Word not deleted"
     blank: "Can't found word!"
     can_not_delete: "This word have been used in relative data!"
-    manager_word: "Manager word"
+    manager_word: " Manager word"
   word_answer:
     create: "Word answer created"
     update: "Word asnwer updated"
@@ -123,7 +124,8 @@ en:
   keyword: Keyword
   all: All
   lesson:
-    title: "Lessons"
+    back_list: " Back to lessons list"
+    title: " Lessons"
     list_lesson: "List lesson"
     your_answers: "Your answers"
     your_score: "Your score:"
@@ -135,7 +137,7 @@ en:
     subject: "Subject"
     start: "Start"
     finished: "Finished"
-    num_question: "Total question:"
+    num_question: "Total question: "
     wait_contest: "Wait contest"
     correct_user_lesson: "You don't have permisson"
     save_btn: "Save"
@@ -150,10 +152,10 @@ en:
     incorrect_answer: "Incorrect"
     finished: "finished"
     finished-lesson: " finished lesson"
-    num_question: "Total question"
     wait_contest: "wait contest"
     create_lesson: " create lesson"
     learn_lesson: " learn lesson"
+    do_lesson: "Do lesson"
     create:
       success: "Create success"
       create_fail: "Create fail"

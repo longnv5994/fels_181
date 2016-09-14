@@ -1,3 +1,5 @@
+<% provide :title, t("lesson.do_lesson") %>
+<i class="fa fa-th-list" aria-hidden="true"></i>
 <label><%= t "lesson.num_question" %></label>
 <%= @lesson.results.size %>
 <%= form_for @lesson do |f| %>
@@ -7,7 +9,7 @@
     <% end %>
   </ol>
   <div class="btn-lesson">
-    <div class="col-sm-2">
+    <div class="col-sm-2 col-sm-offset-4">
       <%= f.submit t("lesson.save_btn"), class: "btn btn-primary button" %>
     </div>
     <div class="col-sm-2">

@@ -17,8 +17,10 @@
             "info unfollow" : "success follow") +" btn-follow",
             data: {id: user.id, follow: relationships_path,
             unfollow: relationship_path(user)} %>
-          <%= link_to t("delete"), user, method: :delete,
-            data: {confirm: t("sure")}, class: "btn btn-xs btn-danger" %>
+          <% if current_user.is_admin %>
+            <%= link_to t("delete"), user, method: :delete,
+              data: {confirm: t("sure")}, class: "btn btn-xs btn-danger" %>
+          <% end %>
       <% end %>
     </div>
   </div>

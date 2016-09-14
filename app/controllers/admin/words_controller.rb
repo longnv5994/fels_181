@@ -34,14 +34,10 @@ class Admin::WordsController < ApplicationController
   end
 
   def update
-    if @word.verify_used_word
-      flash[:danger] = t "word.can_not_delete"
+    if @word.update_attributes word_params
+      flash[:success] = t "word.update"
     else
-      if @word.update_attributes word_params
-        flash[:success] = t "word.update"
-      else
-        flash[:danger] = t "word.not_update"
-      end
+      flash[:danger] = t "word.not_update"
     end
     redirect_to admin_words_url
   end

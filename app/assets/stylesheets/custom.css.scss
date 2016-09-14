@@ -74,7 +74,7 @@ table th {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 12px;
   font-weight: bold;
   &:hover {
     color: black;
@@ -86,9 +86,8 @@ table th {
   min-height: 650px
 }
 
-.header_botton a{
+.header_button a{
   color: white;
-  font: Sans-serif;
   font-weight: bord;
   &:hover {
     color: black;
@@ -377,7 +376,9 @@ ul.lesson_word .word_answer span {
 ul.lesson_word .word_answer span.rd-item input {
   width: auto;
 }
-
+ul.lesson_word .word_answer span.rd-content{
+  margin-left: 10px;
+}
 ol.group-lesson {
   clear: both;
   display: block;
@@ -388,13 +389,32 @@ ol.group-lesson li {
 }
 
 ol.group-lesson li.item-word{
-
+  border-top: 1px solid #ddd;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 ol .lesson-correct{
   clear: both;
 }
 
-.score h4 {
-  display: inline-block;
+.score {
+  ol {color: red;}
+  h4 {
+    display: inline-block;
+  }
+}
+
+.it
+
+.item-new-word {
+  margin-bottom: 10px;
+}
+.btn-add-word {
+  padding-top: 5px;
+}
+
+.body_content {
+  padding-top: 30px;
+  border-top: 2px solid #ddd;
 }
