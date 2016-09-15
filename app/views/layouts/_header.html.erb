@@ -4,8 +4,6 @@
     <nav>
       <i>
         <ul class="nav navbar-nav navbar-right header_button">
-          <li><%= link_to t("header.home"), root_path, class:"fa fa-home" %></li>
-          <li><%= link_to t("header.help"), help_path, class:"fa fa-info" %></li>
           <% if logged_in? %>
             <li><%= link_to t("category.categories"), categories_path, class:"fa fa-table" %></li>
             <li><%= link_to t("lesson.title"), lessons_path, class:"fa fa-leanpub" %>
@@ -42,7 +40,8 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to t("header.login"), login_path %></li>
+            <li><%= link_to t("header.home"), root_path, class:"fa fa-home" %></li>
+            <li><%= link_to t("header.login"), login_path, class:"fa fa-key" %></li>
           <% end %>
         </ul>
       </i>

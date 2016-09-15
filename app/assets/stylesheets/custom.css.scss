@@ -83,7 +83,7 @@ table th {
 }
 
 .content-main {
-  min-height: 650px
+  min-height: 550px
 }
 
 .header_button a{
@@ -204,6 +204,10 @@ input {
         font: normal 14px Arial;
       }
     }
+}
+
+.stats {
+  margin-top: 10px
 }
 
 .stats {
@@ -404,8 +408,6 @@ ol .lesson-correct{
     display: inline-block;
   }
 }
-
-.it
 
 .item-new-word {
   margin-bottom: 10px;

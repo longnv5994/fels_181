@@ -35,7 +35,7 @@ en:
     or: "or"
   login: " Login"
   undefine_user: "undefined user"
-  transit: "Sign up now!"
+  transit: " Sign up now!"
   remember: "Remember me on this computer"
   title_head: " | E-Learning"
   new_user: "New user?"
@@ -111,6 +111,7 @@ en:
     blank: "Can't found word!"
     can_not_delete: "This word have been used in relative data!"
     manager_word: " Manager word"
+    text_add: "Word content..."
   word_answer:
     create: "Word answer created"
     update: "Word asnwer updated"

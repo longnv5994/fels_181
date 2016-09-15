@@ -107,6 +107,8 @@ $(document).on('ready page:load', function() {
     $(this).prop('checked', true);
   });
 
+  $('.alert').fadeOut(3000);
+
 });
 
 function loadPageBody($container, url, data) {

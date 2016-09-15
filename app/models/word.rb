@@ -23,7 +23,7 @@ class Word < ActiveRecord::Base
   accepts_nested_attributes_for :word_answers,
     reject_if: lambda {|a| a[:content].blank?}, allow_destroy: true
 
-  validates :content, presence: true, length: {maximum: 140}
+  validates :content, presence: true, length: {maximum: 255}
   validate :validate_answer
 
   def verify_used_word

@@ -2,29 +2,29 @@
   <%= form_for [:admin, @word] do |f| %>
     <%= render "/shared/error_messages", object: f.object %>
     <div class="col-md-12">
-      <div class="col-md-5 col-md-offset-1">
-        <div class="col-md-5">
+      <div class="col-md-4 col-md-offset-2">
+        <div>
           <% if @categories.present? %>
             <label><%= t "category.categories" %></label>
             <%= f.select "category_id",
-              options_for_select(@categories.collect {|category| [category.name, category.id,
-              {class:"form-control"}]},
-              include_blank: t("none"), selected: f.object.category_id) %>
+              options_for_select(@categories.collect {|category| [category.name, category.id]},
+              {selected: f.object.category_id}), {include_blank: t("none")}, class: "form-control" %>
           <% end %>
         </div>
-        <div class="col-md-5 col-md-offset-1">
+        <div>
           <%= f.label :word %>
-          <%= f.text_field :content, class: "form-control" %>
+          <%= f.text_area :content, placeholder: t("word.text_add"), rows: 4,
+            required: "required", class: "form-control" %>
         </div>
       </div>
       <div class="col-md-6">
         <div class="col-md-10 form-group">
           <div class="row">
             <div class="col-md-12">
-              <div class="col-md-4">
+              <div class="col-md-4 col-md-offset-2">
                 <label><%= t "word_answer.answers" %></label>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4 col-md-offset-1">
                 <%= link_to_add_fields raw("#{t "word_answer.new_answer"}
                   <i class='fa fa-plus-square fa-lg' aria-hidden='true'></i>"),
                   f, :word_answers %>
