@@ -1,11 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* mixins, variables, etc. */
-
 $gray-medium-light: #eaeaea;
-
-/* universal */
 
 body {
   padding-top: 60px;
@@ -25,8 +21,6 @@ textarea {
     margin-bottom: 10px;
   }
 }
-
-/* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -55,7 +49,23 @@ p {
   line-height: 1.7em;
 }
 
-/* header */
+.btn-submit-form {
+  margin-top: 5px
+}
+
+.btn100per{
+  width: 100%;
+}
+
+table tr td {
+  vertical-align: middle !important;
+}
+table .underline {
+  text-decoration: underline;
+}
+table th {
+  text-align: center
+}
 
 #logo {
   float: left;
@@ -64,7 +74,7 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 12px;
   font-weight: bold;
   &:hover {
     color: black;
@@ -72,9 +82,12 @@ p {
   }
 }
 
-.header_botton a{
+.content-main {
+  min-height: 550px
+}
+
+.header_button a{
   color: white;
-  font: Sans-serif;
   font-weight: bord;
   &:hover {
     color: black;
@@ -86,12 +99,12 @@ p {
   background-color: #337ab7;
 }
 
-/* footer */
-
 footer {
-  margin-top: 45px;
-  padding-top: 100px;
+  overflow: hidden;
+  clear: both;
   color: $gray-light;
+  padding: 30px 10px;
+  background: #ececec;
   a {
     color: $gray;
     &:hover {
@@ -116,7 +129,6 @@ footer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* forms */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -143,8 +155,6 @@ input {
   width: auto;
   margin-left: 0;
 }
-
-/* forms */
 
 #error_explanation {
   color: red;
@@ -175,10 +185,234 @@ input {
     margin-top: 20px;
     p {
       font-size: 18px;
+      text-align: left;
     }
+    h2{
+      margin: 0;
+      padding: 0;
+      img {
+        border-radius: 50%;
+        border: 1px solid #ddd;
+      }
+      p.btn-edit-profile {
+        font: normal 14px Arial;
+        a {
+          text-decoration: underline
+        }
+      }
+      p.info {
+        font: normal 14px Arial;
+      }
+    }
+}
+
+.stats {
+  margin-top: 10px
 }
 
 .botton {
   margin-top: 20px;
   color: green;
+}
+
+.categories {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+#myform {
+  display: none;
+}
+.fix-paging {
+  text-align: center;
+  div.pagination {
+    margin:10px 0;
+  }
+  ul.pagination {
+    margin:0;
+  }
+}
+
+.grid-answer {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Begin portlet gird system */
+.portlet.grid .portlet-title {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  overflow: hidden;
+}
+.portlet.grid .portlet-title .caption {
+  display: block;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 10px 0;
+  color: #666;
+  padding: 10px 0;
+  clear: both;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body {
+  padding-top: 5px;
+}
+.portlet.grid .portlet-body .item {
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #e7ecf1;
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body .item:nth-child(odd){
+    background-color: #f9f9f9;
+}
+.portlet.grid .portlet-body .item .item-img {
+  width: 55px;
+  float: left;
+}
+.portlet.grid .portlet-body .item .item-img img {
+  border-radius: 50%;
+  max-width: 50px;
+}
+.portlet.grid .portlet-body .item .item-body {
+  padding-left: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.portlet.grid .portlet-body .item .item-body .item-info {
+  display: inline-block;
+}
+.portlet.grid .portlet-body .item .item-body .item-info p {
+  color: #060606;
+  font-weight: 600;
+  margin: 10px 0 0 0
+}
+.portlet.grid .portlet-body .item .item-body .lst-answer ol {
+  padding-left: 20px;
+}
+.portlet.grid .portlet-body .item .item-body .item-datetime {
+  white-space: nowrap;
+  color: #A6A8A8;
+  text-align: center;
+  width: 180px;
+  display: inline-block;
+}
+.portlet.grid .portlet-body .item .item-body .item-buttons {
+  text-align: center;
+  width: 150px;
+  white-space: nowrap;
+  display: inline-block;
+  float: right;
+  margin-top: 15px;
+}
+.portlet.grid .portlet-body .grid-paging {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  text-align: center;
+}
+.portlet.grid .portlet-body .item .item-icon {
+  float: left;
+}
+.portlet.grid .portlet-body .item .item-icon .icon-question {
+  margin: 14px 0 0 10px;
+}
+.portlet.grid .portlet-title .grid-search {
+  display: inline-block
+}
+.portlet.grid .portlet-title .title-list-word {
+  font:bold 25px Arial
+}
+
+.grid-word .chk-learn {
+  display: inline-flex;
+  margin-top: 5px;
+}
+
+.btn-lesson {
+  padding-top: 5px;
+  border-top: 1px solid #ddd;
+}
+
+ul.lesson_word {
+  padding-left: 0;
+  list-style: none
+}
+ul.lesson_word .word_answer {
+  clear: both;
+  padding-left: 20px;
+}
+ul.lesson_word .word_answer span {
+  float: left;
+}
+ul.lesson_word .word_answer span.rd-item input {
+  width: auto;
+}
+ul.lesson_word .word_answer span.rd-content{
+  margin-left: 10px;
+}
+ol.group-lesson {
+  clear: both;
+  display: block;
+  overflow: hidden;
+}
+ol.group-lesson li {
+  clear: both;
+}
+
+ol.group-lesson li.item-word{
+  border-top: 1px solid #ddd;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+ol .lesson-correct{
+  clear: both;
+}
+
+.score {
+  ol {color: red;}
+  h4 {
+    display: inline-block;
+  }
+}
+
+.item-new-word {
+  margin-bottom: 10px;
+}
+.btn-add-word {
+  padding-top: 5px;
+}
+
+.body_content {
+  padding-top: 30px;
+  border-top: 2px solid #ddd;
 }

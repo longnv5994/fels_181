@@ -9,6 +9,10 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
+  end
+
   def forget user
     user.forget
     cookies.delete :user_id

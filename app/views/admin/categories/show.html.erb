@@ -1,0 +1,17 @@
+<div class="portlet category">
+  <div class="portlet-title">
+    <div class="caption">
+      <h4>
+        <span class="text-danger"><%= t "title: "%></span><%= @category.name %>
+      </h4>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="grid-content">
+      <p>
+        <span class="text-danger"><%= t "created: "%></span>
+        <%= l @category.created_at, format: :long %>
+      </p>
+    </div>
+  </div>
+</div>

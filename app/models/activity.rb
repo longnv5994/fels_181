@@ -1,6 +1,8 @@
 class Activity < ActiveRecord::Base
-  belong_to :user
+  belongs_to :user
 
   validates :user_id, presence: true
-  validates :status, presence: true, length: {maximum: 250}
+  enum activity_types: [:follow, :unfollow, :create_lesson, :finished,
+    :learn_lesson]
+
 end

@@ -11,7 +11,76 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+@media (max-width: 768px) {
+  .hidden-xs{
+    display:none;
+  }
+  .no-padding-xs{
+    padding:0 !important;
+  }
+  .no-padding-left-xs{
+    padding-left:0 !important;
+  }
+  .no-padding-right-xs{
+    padding-right:0 !important;
+  }
+}
+@media (min-width: 768px) {
+  .hidden-sm{
+    display:none;
+  }
+  .no-padding-sm{
+    padding:0 !important;
+  }
+  .no-padding-left-sm{
+    padding-left:0 !important;
+  }
+  .no-padding-right-sm{
+    padding-right:0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .hidden-md{
+    display:none;
+  }
+  .no-padding-md{
+    padding:0 !important;
+  }
+  .no-padding-left-md{
+    padding-left:0 !important;
+  }
+  .no-padding-right-md{
+    padding-right:0 !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-lg{
+    display:none;
+  }
+  .no-padding-lg{
+    padding:0 !important;
+  }
+  .no-padding-left-lg{
+    padding-left:0 !important;
+  }
+  .no-padding-right-lg{
+    padding-right:0 !important;
+  }
+}
+
+.no-padding{
+  padding:0 !important;
+}
+.no-padding-left{
+  padding-left:0 !important;
+}
+.no-padding-right{
+  padding-right:0 !important;
+}

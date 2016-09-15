@@ -1,16 +1,18 @@
-class UsersControllr < ApplicationController
+class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :admin_user, only: :destroy
+  before_action :verify_admin, only: :destroy
 
   def new
     @user = User.new
   end
 
   def show
+    @activity = Activity.where(user_id: @user.id).order(created_at: :desc).
+      paginate page: params[:page]
   end
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def edit
@@ -53,9 +55,5 @@ class UsersControllr < ApplicationController
         flash[:danger] = t "miss_user"
         redirect_to root_url
       end
-    end
-
-    def admin_user
-      redirect_to root_url unless current_user.is_admin?
     end
 end
